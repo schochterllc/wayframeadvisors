@@ -1,93 +1,352 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Wayframe Advisors</title>
-    <style>
-        :root {
-            --bg-color: #f4f6f9;
-            --card-bg: #ffffff;
-            --text-main: #1a1d20;
-            --text-muted: #59626a;
-            --primary: #0b61ff;
-            --primary-hover: #004fe5;
-            --border-color: #e2e8f0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wayframe Advisors — thoughtful strategy, clear communication, and a clearer path forward.">
+  <title>Wayframe Advisors | A Clearer Path Forward</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    :root {
+      --navy: #17324D;
+      --blue: #416C85;
+      --sky: #A9C4D2;
+      --cream: #F7F2E8;
+      --sandstone: #D8C9B6;
+      --sage: #708878;
+      --charcoal: #262C30;
+      --white: #FFFEFB;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .contact-card {
-            background-color: var(--card-bg);
-            width: 100%;
-            max-width: 480px;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border-color);
-            text-align: center;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .contact-card h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.7;
+    }
 
-        .contact-card p {
-            font-size: 15px;
-            line-height: 1.6;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-        }
+    a {
+      color: inherit;
+    }
 
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--primary);
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 15px;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 8px;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 4px 12px rgba(11, 97, 255, 0.2);
-            width: 100%;
-        }
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
 
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
+    /* Navigation */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--sandstone);
+    }
 
-        .btn-primary:active {
-            transform: scale(0.98);
-        }
-    </style>
+    nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .nav-link {
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: var(--blue);
+    }
+
+    /* Hero image header */
+    .hero {
+      min-height: 510px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23, 50, 77, 0.88),
+          rgba(23, 50, 77, 0.48)
+        ),
+        url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85")
+        center 48% / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 690px;
+      padding: 90px 0;
+    }
+
+    .eyebrow {
+      color: var(--sky);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: var(--white);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      line-height: 1.12;
+      font-weight: 600;
+      letter-spacing: -1.5px;
+      margin-bottom: 24px;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--white);
+      font-size: 1.15rem;
+      margin-bottom: 32px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 25px;
+      background: var(--cream);
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+      border: 1px solid var(--cream);
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--sky);
+      border-color: var(--sky);
+    }
+
+    /* Introduction */
+    .intro {
+      background: var(--cream);
+      padding: 85px 0;
+    }
+
+    .intro-content {
+      max-width: 790px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.25;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .intro p {
+      font-size: 1.05rem;
+      margin-bottom: 18px;
+    }
+
+    .accent-line {
+      width: 58px;
+      height: 3px;
+      background: var(--sage);
+      margin: 0 auto 28px;
+    }
+
+    /* Simple services section */
+    .approach {
+      padding: 75px 0;
+      background: var(--white);
+    }
+
+    .approach h2 {
+      text-align: center;
+    }
+
+    .approach-text {
+      max-width: 650px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .approach-text p {
+      margin-bottom: 20px;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 65px 0;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact h2 {
+      color: var(--white);
+    }
+
+    .contact p {
+      margin-bottom: 25px;
+    }
+
+    .contact .button {
+      background: var(--cream);
+      color: var(--navy);
+    }
+
+    footer {
+      padding: 24px 0;
+      background: var(--cream);
+      color: var(--charcoal);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        min-height: 72px;
+      }
+
+      .logo {
+        font-size: 0.85rem;
+        letter-spacing: 1.3px;
+      }
+
+      .hero {
+        min-height: 460px;
+        background-position: center;
+      }
+
+      .hero-content {
+        padding: 70px 0;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .intro,
+      .approach {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="contact-card">
-        <h1>Let’s Grow Your Brand</h1>
-        <p>Navigating the ever-changing landscape of communication and marketing can be challenging. Let Wayframe Advisors help you cut through the noise and achieve your goals.</p>
-        <a href="mailto:kosanovicn520@gmail.com" class="btn-primary">Get in Touch</a>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="#" class="logo">WAYFRAME ADVISORS</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="eyebrow">Wayframe Advisors</p>
+          <h1>A clearer path forward.</h1>
+          <p class="hero-description">
+            Thoughtful strategy. Clear communication.
+            A stronger foundation for growth.
+          </p>
+          <a class="button" href="#contact">LET'S TALK</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <div class="container">
+        <div class="intro-content">
+          <div class="accent-line"></div>
+          <h2>A thoughtful approach to what comes next.</h2>
+          <p>
+            At Wayframe Advisors, we believe that progress begins
+            with clarity. Understanding where you are, where you
+            want to go, and what it takes to get there.
+          </p>
+          <p>
+            We aim to help businesses navigate challenges, clarify
+            their direction, and identify opportunities to move
+            forward with confidence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach">
+      <div class="container">
+        <div class="approach-text">
+          <h2>Clarity in every step.</h2>
+          <p>
+            Every business has its own goals and challenges.
+            Our approach starts with understanding what matters
+            most and finding a considered way forward.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Let's start a conversation.</h2>
+        <p>
+          Have a question or want to learn more about
+          Wayframe Advisors? We'd be glad to hear from you.
+        </p>
+        <!-- Replace this address with your actual business email -->
+        <a
+          class="button"
+          href="mailto:YOUR_EMAIL@example.com"
+        >
+          GET IN TOUCH
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        &copy; <span id="year"></span> Wayframe Advisors.
+        All rights reserved.
+      </p>
     </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 
 </body>
 </html>
